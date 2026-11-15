@@ -8,14 +8,21 @@ Conference paper management system (Software Engineering project, Spring 2026).
 4. Frontend: cd frontend && npm install && npm run dev  (http://localhost:5173)
 
 ## Links
-- [Trello Board] (https://trello.com/b/CiwVs4AJ/cms)
-- [Figma wireframes]: (https://www.figma.com/design/FAuWplknaRKiPz5ohV4YsQ/Paper2podcast-Wireframes?node-id=0-1&p=f&t=ELmBusJGyxghKokP-0)
-- Live backend: (Render link)
-- Live frontend: (Vercel link)
+- Trello Board (https://trello.com/b/CiwVs4AJ/cms)
+
+- Figma wireframes: (https://www.figma.com/design/FAuWplknaRKiPz5ohV4YsQ/Paper2podcast-Wireframes?node-id=0-1&p=f&t=ELmBusJGyxghKokP-0)
+
+- Live backend: (https://paper-cms-api.onrender.com)
+
+- Live frontend: (https://paper2podcast.vercel.app/)
 
 ## Team
 Humna Naveed
+
 Aleesha Kashif
+
 Tanisha Devi
+
 Sakina
+
 Mumita
