@@ -1,4 +1,4 @@
-# SE_pro_Paper2podcast
+# Paper2podcast
 Conference paper management system (Software Engineering project, Spring 2026).
 
 ## Run locally
