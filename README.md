@@ -1,5 +1,5 @@
 # Paper2podcast
-Conference paper management system (Software Engineering project, Spring 2026).
+Conference paper management system.
 
 ## Run locally
 1. cp .env.example .env
@@ -10,7 +10,7 @@ Conference paper management system (Software Engineering project, Spring 2026).
 ## Links
 - Trello Board (https://trello.com/b/CiwVs4AJ/cms)
 
-- Figma wireframes: (https://www.figma.com/design/FAuWplknaRKiPz5ohV4YsQ/Paper2podcast-Wireframes?node-id=0-1&p=f&t=ELmBusJGyxghKokP-0)
+- Figma wireframes: (https://www.figma.com/design/FAuWplknaRKiPz5ohV4YsQ/Paper2podcast-Wireframes?node-id=0-1&t=Q5M8ufdgBykI5wLe-1)
 
 - Live backend: (https://paper-cms-api.onrender.com)
 
