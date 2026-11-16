@@ -7,16 +7,26 @@ services:
       POSTGRES_DB: cms
     ports: ["5432:5432"]
     volumes: ["pgdata:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cms -d cms"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
   mailpit:
     image: axllent/mailpit
     ports: ["8025:8025", "1025:1025"]
+
   api:
     build: ./backend
     env_file: .env
-    depends_on: [db]
+    depends_on:
+      db:
+        condition: service_healthy
     restart: on-failure
     ports: ["8000:8000"]
     volumes: ["./backend:/app"]
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
 volumes:
   pgdata:
