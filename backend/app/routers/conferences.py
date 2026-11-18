@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 
 from app.db import get_db
 from app.models import Conference, User
-from app.security import require_role
+from app.dependencies import require_role
 
 router = APIRouter(prefix="/conferences", tags=["conferences"])
 
