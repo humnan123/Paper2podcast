@@ -9,9 +9,14 @@ export async function api(
   } = {}
 ) {
 
-  const headers = {
-    "Content-Type": "application/json",
-  };
+  const headers = {};
+
+  // Files (FormData) must NOT get a JSON content type or be stringified.
+  const isForm = body instanceof FormData;
+
+  if (!isForm) {
+    headers["Content-Type"] = "application/json";
+  }
 
 
   const token = localStorage.getItem("token");
@@ -27,7 +32,7 @@ export async function api(
     {
       method,
       headers,
-      body: body ? JSON.stringify(body) : null,
+      body: body ? (isForm ? body : JSON.stringify(body)) : null,
     }
   );
 
@@ -39,7 +44,8 @@ export async function api(
 
   if (!res.ok) {
     throw new Error(
-      data.detail || "Something went wrong"
+      (typeof data.detail === "string" && data.detail) ||
+      "Something went wrong"
     );
   }
 
