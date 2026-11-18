@@ -15,6 +15,7 @@ import VerifyOTP from "./pages/VerifyOTP";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
+import AdminConferences from "./pages/AdminConferences";
 
 
 const Page = ({ title }) => (
@@ -22,7 +23,6 @@ const Page = ({ title }) => (
     {title}
   </h2>
 );
-
 
 
 function Home() {
@@ -60,7 +60,6 @@ function Home() {
 
 
 export default function App() {
-
 
 return (
 
@@ -162,13 +161,13 @@ element={
 
 
 
-{/* Admin page */}
+{/* Admin page (Part 3) */}
 
 <Route
 path="/admin/conferences"
 element={
 <Protected allowedRoles={["admin"]}>
-<Page title="Admin: conferences" />
+<AdminConferences />
 </Protected>
 }
 />
