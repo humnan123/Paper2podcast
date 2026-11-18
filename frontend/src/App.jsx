@@ -16,6 +16,9 @@ import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import AdminConferences from "./pages/AdminConferences";
+import BrowseConferences from "./pages/BrowseConferences";
+import SubmitPaper from "./pages/SubmitPaper";
+import MyPapers from "./pages/MyPapers";
 
 
 const Page = ({ title }) => (
@@ -118,7 +121,7 @@ element={<ResetPassword />}
 path="/submit"
 element={
 <Protected allowedRoles={["author"]}>
-<Page title="Submit paper" />
+<SubmitPaper />
 </Protected>
 }
 />
@@ -128,7 +131,7 @@ element={
 path="/my-papers"
 element={
 <Protected allowedRoles={["author"]}>
-<Page title="My submissions" />
+<MyPapers />
 </Protected>
 }
 />
@@ -179,7 +182,7 @@ element={
 <Route
 path="/conferences"
 element={
-<Page title="Browse conferences" />
+<BrowseConferences />
 }
 />
 

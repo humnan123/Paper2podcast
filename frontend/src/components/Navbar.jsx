@@ -33,6 +33,25 @@ export default function Navbar() {
         Verify OTP
       </Link>
 
+      {" | "}
+
+      <Link to="/conferences">
+        Conferences
+      </Link>
+
+      {role === "author" && (
+        <>
+          {" | "}
+          <Link to="/submit">
+            Submit paper
+          </Link>
+          {" | "}
+          <Link to="/my-papers">
+            My papers
+          </Link>
+        </>
+      )}
+
 
       <span style={{
         marginLeft: "20px"
