@@ -1,17 +1,48 @@
 const BASE = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
-export async function api(path, { method = "GET", body } = {}) {
-  const headers = { "Content-Type": "application/json" };
+
+export async function api(
+  path,
+  {
+    method = "GET",
+    body = null
+  } = {}
+) {
+
+  const headers = {
+    "Content-Type": "application/json",
+  };
+
+
   const token = localStorage.getItem("token");
-  if (token) headers.Authorization = `Bearer ${token}`;
-  const res = await fetch(BASE + path, {
-    method,
-    headers,
-    body: body && JSON.stringify(body),
-  });
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({}));
-    throw new Error(err.detail || res.statusText);
+
+
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
   }
-  return res.json();
+
+
+  const res = await fetch(
+    BASE + path,
+    {
+      method,
+      headers,
+      body: body ? JSON.stringify(body) : null,
+    }
+  );
+
+
+  const data = await res
+    .json()
+    .catch(() => ({}));
+
+
+  if (!res.ok) {
+    throw new Error(
+      data.detail || "Something went wrong"
+    );
+  }
+
+
+  return data;
 }
