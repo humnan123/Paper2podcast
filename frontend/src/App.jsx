@@ -1,7 +1,9 @@
+import AdminConferences from "./pages/AdminConferences";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import { api } from "./api";
+
 
 const Page = ({ title }) => <h2 style={{ padding: 16 }}>{title}</h2>;
 
@@ -35,6 +37,7 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/admin/conferences" element={<AdminConferences />} />
         {ROUTES.map(([path, title]) => (
           <Route key={path} path={path} element={<Page title={title} />} />
         ))}
